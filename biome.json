@@ -10,6 +10,6 @@
 		}
 	},
 	"files": {
-		"include": ["**/*.{js,jsx,ts,tsx,json,md,mdx,html}"]
+		"include": ["**/*.{js,jsx,ts,tsx,json,md,mdx,html,css}"]
 	}
 }
