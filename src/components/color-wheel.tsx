@@ -54,17 +54,17 @@ export const ColorWheel = (props: ColorWheelProps) => {
 
 			{isOpen && (
 				<>
-					<div
-						className="fixed inset-0 bg-black/5 backdrop-blur-sm z-[1]"
+					{/* <div
+						className="fixed inset-0 bg-black/5 backdrop-blur-sm z-10"
 						onClick={() => setIsOpen(false)}
-					/>
+					/> */}
 
 					<div
 						ref={$wheel}
-						className="absolute top-2 right-10 outline-none animate-in fade-in-50 slide-in-from-right-5 z-50"
+						className="absolute top-2 right-10 outline-none animate-in fade-in-50 slide-in-from-right-5"
 					>
 						<Wheel
-							className="border border-neutral-500 rounded-full outline-none cursor-pointer"
+							className="border border-neutral-500 rounded-full outline-none cursor-pointer z-50"
 							color={color}
 							onChange={(e) => onChange(e.hex)}
 						/>
