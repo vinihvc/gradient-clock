@@ -31,6 +31,12 @@ interface ClockProps
 	type: Clocks;
 }
 
+const CLOCK_DIVIDER = {
+	hour: 24,
+	minute: 60,
+	second: 60,
+};
+
 export const Clock = (props: ClockProps) => {
 	const { isSelected, type, className, onFocus, ...rest } = props;
 
@@ -41,7 +47,7 @@ export const Clock = (props: ClockProps) => {
 	const [colors] = useAtom(colorAtom);
 
 	React.useEffect(() => {
-		currentTime.set((time[type] / 60) * 360);
+		currentTime.set((time[type] / CLOCK_DIVIDER[type]) * 360);
 	}, [time]);
 
 	return (
