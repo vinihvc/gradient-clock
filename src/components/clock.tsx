@@ -31,12 +31,6 @@ interface ClockProps
 	type: Clocks;
 }
 
-const CLOCK_SPEED = {
-	hour: 10000,
-	minute: 1000,
-	second: 100,
-};
-
 export const Clock = (props: ClockProps) => {
 	const { isSelected, type, className, onFocus, ...rest } = props;
 
