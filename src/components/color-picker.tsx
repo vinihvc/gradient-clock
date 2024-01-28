@@ -37,7 +37,7 @@ export const ColorPicker = (props: ColorPickerProps) => {
 			className={cn("color-picker", colorPickerVariants({ className }))}
 			{...rest}
 		>
-			<div className="flex space-x-2 relative">
+			<div className="flex gap-x-2 relative">
 				<ColorWheel
 					color={color[currentClock].from}
 					onChange={(e) => handleColorChange(e, "from")}

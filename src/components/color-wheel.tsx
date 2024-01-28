@@ -6,7 +6,7 @@ import { VariantProps, tv } from "tailwind-variants";
 import { useOutsideClick } from "../hooks/use-click-outside";
 
 const colorWheelVariants = tv({
-	base: ["size-5 border border-neutral-500/50 rounded-full transition"],
+	base: ["size-5 border border-neutral-500/50 rounded-full transition z-20"],
 	variants: {
 		isActive: {
 			true: ["border-neutral-500"],
@@ -53,16 +53,23 @@ export const ColorWheel = (props: ColorWheelProps) => {
 			/>
 
 			{isOpen && (
-				<div
-					ref={$wheel}
-					className="absolute top-2 right-14 outline-none animate-in fade-in-50 slide-in-from-right-5"
-				>
-					<Wheel
-						className="border border-neutral-500 rounded-full outline-none cursor-pointer"
-						color={color}
-						onChange={(e) => onChange(e.hex)}
+				<>
+					<div
+						className="fixed inset-0 bg-black/5 backdrop-blur-sm z-[1]"
+						onClick={() => setIsOpen(false)}
 					/>
-				</div>
+
+					<div
+						ref={$wheel}
+						className="absolute top-2 right-10 outline-none animate-in fade-in-50 slide-in-from-right-5 z-50"
+					>
+						<Wheel
+							className="border border-neutral-500 rounded-full outline-none cursor-pointer"
+							color={color}
+							onChange={(e) => onChange(e.hex)}
+						/>
+					</div>
+				</>
 			)}
 		</>
 	);
