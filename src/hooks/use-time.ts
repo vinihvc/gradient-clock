@@ -8,7 +8,7 @@ export const useClock = () => {
 	useInterval(() => {
 		const now = new Date();
 		setTime({
-			hour: now.getHours(),
+			hour: now.getHours() % 12 || 12,
 			minute: now.getMinutes(),
 			second: now.getSeconds(),
 		});

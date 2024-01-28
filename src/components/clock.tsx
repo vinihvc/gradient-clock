@@ -32,7 +32,7 @@ interface ClockProps
 }
 
 const CLOCK_DIVIDER = {
-	hour: 24,
+	hour: 12,
 	minute: 60,
 	second: 60,
 };
